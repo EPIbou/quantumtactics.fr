@@ -1,0 +1,514 @@
+:root {
+  --bg-1: #040611; /* fond spatial profond */
+  --bg-2: #0a0f22;
+  --accent-1: #00c6ff; /* cyan lumineux */
+  --accent-2: #0072ff; /* bleu spatial */
+  --accent-glow: rgba(0,198,255,0.7);
+  --text: #e8f1ff;
+  --muted: #99aac8;
+  --surface: rgba(255,255,255,0.03);
+  --radius: 14px;
+  --font-sans: "Inter", "Segoe UI", Roboto, sans-serif;
+  --font-display: "Orbitron", "Rajdhani", "Audiowide", sans-serif;
+  --shadow-soft: 0 0 14px rgba(0,198,255,0.25);
+  --shadow-strong: 0 0 28px rgba(0,198,255,0.45);
+  --background: radial-gradient(circle at 20% 20%, rgba(0,198,255,0.06), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(123,97,255,0.04), transparent 45%),
+              linear-gradient(180deg, var(--bg-1), var(--bg-2));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==== MODIFICATION : CENTRAGE DU LIEN ==== */
+html, body {
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, rgba(0,198,255,0.06), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(123,97,255,0.04), transparent 45%),
+              linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+
+  /* ==== CENTRAGE DU CONTENU PRINCIPAL ==== */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* étoiles */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 1;
+  pointer-events: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text);
+  margin: 30px;
+}
+
+h1 {
+  font-size: clamp(6rem, 12vw, 9rem);
+  color: var(--accent-1);
+  text-align: center;
+  text-shadow:
+    0 0 5px var(--accent-1),
+    0 0 10px var(--accent-1),
+    0 0 20px var(--accent-1),
+    0 0 40px rgba(0,198,255,0.6);
+  animation: neonPulse 1s ease-in-out infinite alternate;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--accent-2);
+  text-shadow: var(--shadow-soft);
+  margin-bottom: 0.4em;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 0.4em;
+}
+
+h4 {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.4em;
+}
+
+p {
+  font-size: 1.25rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  margin: 25px;
+  text-align: center;
+}
+
+/* ==== STYLE DU LIEN CENTRÉ ==== */
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--accent-1);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  background: rgba(0,198,255,0.1);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  filter: brightness(0.85);
+  box-shadow: var(--shadow-strong);
+}
+
+@keyframes neonPulse {
+  0% {
+    text-shadow:
+      0 0 5px var(--accent-1),
+      0 0 10px var(--accent-1),
+      0 0 20px var(--accent-1),
+      0 0 40px rgba(0,198,255,0.6);
+    opacity: 0.8;
+  }
+  100% {
+    text-shadow:
+      0 0 2px var(--accent-1),
+      0 0 6px var(--accent-1),
+      0 0 12px rgba(0,198,255,0.4),
+      0 0 30px rgba(0,198,255,0.3);
+    opacity: 0.7;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,15,34,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,198,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8%;
+  box-shadow: 0 0 25px rgba(0,198,255,0.15);
+}
+
+header h1 {
+  font-size: 1.6rem;
+  color: var(--accent-1);
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+section {
+  padding: 5rem 10%;
+  position: relative;
+}
+
+.hero {
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(0,198,255,0.08), transparent 70%);
+  padding: 8rem 10%;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 1rem auto 2rem;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: var(--shadow-strong);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--accent-1);
+  border: 1px solid var(--accent-1);
+}
+
+.btn.secondary:hover {
+  background: rgba(0,198,255,0.08);
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+footer {
+  background: rgba(10,15,34,0.85);
+  text-align: center;
+  padding: 3rem 10%;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: var(--shadow-soft); }
+  50% { box-shadow: var(--shadow-strong); }
+}
+.pulse {
+  animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 1rem; }
+  section { padding: 3rem 6%; }
+  .grid { gap: 1.2rem; }
+}
+
+/* ===== TABLEAU DES CHEFS D'ÉQUIPE ===== */
+.team {
+  text-align: center;
+  padding: 4rem 5%;
+}
+
+.team h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--accent-1);
+  text-shadow: var(--shadow-soft);
+  margin-bottom: 3rem;
+}
+
+.team-table {
+  display: grid;
+  gap: 1rem;
+}
+
+.team-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.team-row .cell {
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-row .cell img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.team-row .cell:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}
+
+.team-row .cell img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* ===== CARTES DES ENTREPRENEURS ===== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.card {
+  perspective: 1000px;
+  width: 180px;
+  height: 260px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card-front img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  padding: 1rem;
+}
+
+.card-back p {
+  font-size: 0.8rem !important;
+  line-height: 1.4;
+  color: var(--muted);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* ==== SCROLLBAR SPATIALE ==== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-2), var(--accent-1));
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-1) var(--bg-2);
+}
+
+.game-info .card-inner {
+  transform: none;
+  cursor: default;
+}
+
+
+
+/* ==== GRILLE DES EXPLICATIONS DU JEU ==== */
+.game-info {
+  text-align: center;
+  padding: 4rem 2%;
+}
+
+.game-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--accent-1);
+  text-shadow: var(--shadow-soft);
+  margin-bottom: 2rem;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 300px); /* 4 colonnes fixes */
+  gap: 5rem;
+  justify-items: center;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-right: 50px;
+  margin-left: 0;
+}
+
+.game-grid .card {
+  width: 100%;
+  max-width: 1000px;
+  height: 600px; /* carré */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-grid .card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}
+
+.game-grid .card h3 {
+  color: var(--accent-1);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.game-grid .card p {
+  font-size: 1rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* --- Responsive : 1 colonne sur petit écran --- */
+@media (max-width: 768px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==== CENTRAGE GLOBAL DE LA GRILLE .game-grid ==== */
+.game-info {
+  padding: 4rem 0;          /* retire le padding latéral qui décale */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game-grid {
+  max-width: 1400px;        /* largeur totale de la grille */
+  width: calc(100% - 2rem); /* évite de coller aux bords */
+  margin: 0 auto;           /* centre horizontalement */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur une ligne */
+  gap: 2.5rem;              /* espace entre les colonnes */
+  justify-items: center;
+  align-items: start;
+}
