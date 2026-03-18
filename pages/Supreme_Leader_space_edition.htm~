@@ -35,7 +35,7 @@ h1 {
       <div class="card-inner">
         <div class="card-back">
           <h3>L'arbre de recherche</h3>
-          <p>Au c&oelig;ur de cette ascension, le joueur disposera d'un vaste arbre de comp&eacute;tences, v&eacute;ritable holocron* strat&eacute;gique renfermant des doctrines avanc&eacute;es, des am&eacute;liorations structurelles et des technologies capables de renverser l'&eacute;quilibre des forces. Chaque choix au sein de cet arbre renforcera l'identit&eacute; de son empire : expansion &eacute;clair, ma&icirc;trise &eacute;nerg&eacute;tique, d&eacute;fense absolue, ou puissance de frappe d&eacute;vastatrice. Cet outil &eacute;volutif sera la colonne vert&eacute;brale de toute strat&eacute;gie, refl&eacute;tant la vision du joueur et les alliances qu'il d&eacute;cidera d'honorer ou de briser.</p>
+          <p>Au c&oelig;ur de cette ascension, le joueur disposera d'un vaste arbre de comp&eacute;tences, v&eacute;ritable holocron strat&eacute;gique renfermant des doctrines avanc&eacute;es, des am&eacute;liorations structurelles et des technologies capables de renverser l'&eacute;quilibre des forces. Chaque choix au sein de cet arbre renforcera l'identit&eacute; de son empire : expansion &eacute;claire, ma&icirc;trise &eacute;nerg&eacute;tique, d&eacute;fense absolue, ou puissance de frappe d&eacute;vastatrice. Cet outil &eacute;volutif sera la colonne vert&eacute;brale de toute strat&eacute;gie, refl&eacute;tant la vision du joueur et les alliances qu'il d&eacute;cidera d'honorer ou de briser.</p>
         </div>
         <div class="card-front">
           <img src="../images/arbre_de_competences.jpg" alt="arbre_de_competences">
@@ -148,6 +148,5 @@ h1 {
     <a href="Journal_de_bord.htm">Journal de bord de la cr&eacute;ation du jeu</a>
     <p></p>
     <script src="../js/Quantum_Tactics.js"></script>
-    <p>*L'holocron est un objet Jedi ou Sith dans Star Wars qui renferme les secrets les mieux gardés de leurs pouvoirs.</p>
   </body>
 </html>
