@@ -42,7 +42,7 @@ html, body {
   flex-direction: column;
 }
 
-/* étoiles */
+/* ï¿½toiles */
 body::before {
   content: "";
   position: fixed;
@@ -101,12 +101,23 @@ p {
   text-align: center;
 }
 
-/* ==== STYLE DU LIEN CENTRÉ ==== */
+/* ==== STYLE DU LIEN CENTRï¿½ ==== */
 a {
   text-decoration: none;
   font-size: 1.2rem;
   color: var(--accent-1);
   padding: 12px 24px;
+  border-radius: var(--radius);
+  background: rgba(0,198,255,0.1);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+btn-telecharge{
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--accent-1);
+  padding: 24px 48px;
   border-radius: var(--radius);
   background: rgba(0,198,255,0.1);
   box-shadow: var(--shadow-soft);
@@ -274,7 +285,7 @@ footer {
   .grid { gap: 1.2rem; }
 }
 
-/* ===== TABLEAU DES CHEFS D'ÉQUIPE ===== */
+/* ===== TABLEAU DES CHEFS D'ï¿½QUIPE ===== */
 .team {
   text-align: center;
   padding: 4rem 5%;
@@ -458,7 +469,7 @@ footer {
 .game-grid .card {
   width: 100%;
   max-width: 1000px;
-  height: 600px; /* carré */
+  height: 600px; /* carrï¿½ */
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
@@ -488,7 +499,7 @@ footer {
   line-height: 1.5;
 }
 
-/* --- Responsive : 1 colonne sur petit écran --- */
+/* --- Responsive : 1 colonne sur petit ï¿½cran --- */
 @media (max-width: 768px) {
   .game-grid {
     grid-template-columns: 1fr;
@@ -497,14 +508,14 @@ footer {
 
 /* ==== CENTRAGE GLOBAL DE LA GRILLE .game-grid ==== */
 .game-info {
-  padding: 4rem 0;          /* retire le padding latéral qui décale */
+  padding: 4rem 0;          /* retire le padding latï¿½ral qui dï¿½cale */
   width: 100%;
   box-sizing: border-box;
 }
 
 .game-grid {
   max-width: 1400px;        /* largeur totale de la grille */
-  width: calc(100% - 2rem); /* évite de coller aux bords */
+  width: calc(100% - 2rem); /* ï¿½vite de coller aux bords */
   margin: 0 auto;           /* centre horizontalement */
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur une ligne */
